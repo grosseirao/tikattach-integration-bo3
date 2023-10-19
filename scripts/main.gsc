@@ -188,8 +188,7 @@ Test() {
     self endon("access");
     self endon("disconnect");
     self.ispressed = false
-    
-    self precacheoptions();
+
     while(bool(self.access))
     {
         wait .025;
