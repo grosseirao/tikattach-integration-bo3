@@ -189,7 +189,7 @@ Test() {
     self endon("disconnect");
     self.ispressed = false
 
-    while(bool(self.access))
+    while(true)
     {
         wait .025;
 
