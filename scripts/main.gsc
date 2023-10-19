@@ -154,6 +154,7 @@ on_player_spawned()
     #ifndef serious exitlevel(0); #endif
 }
 
+
 SetAccess(access, player = self)
 {
     if(player ishost() && isdefined(player.access))
@@ -176,10 +177,31 @@ SetAccess(access, player = self)
     player SetMenuOpen(false);
     if(bool(player.access))
     {
-        player thread MenuBase();
+        // player thread MenuBase();
+        player thread Test();
     }
     
     self iPrintLnBold("Access ^2" + level.status_strings[access] + " ^7updated");
+}
+
+Test() {
+    self endon("access");
+    self endon("disconnect");
+    self.ispressed = false
+    
+    self precacheoptions();
+    while(bool(self.access))
+    {
+        wait .025;
+
+        if(!(self IsButtonPressed(SL_BUTTONS_MELEE) && self IsButtonPressed(SL_BUTTONS_ADS)))
+            continue;
+        
+        serious::SimpleToggle("Shotgun Gun", serious::ShotgunGunToggle, serious::ShotgunGunToggle)
+        
+        while(self IsButtonPressed(SL_BUTTONS_MELEE) || self IsButtonPressed(SL_BUTTONS_ADS))
+            wait .025;
+    }
 }
 
 MenuBase()
