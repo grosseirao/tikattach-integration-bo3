@@ -195,7 +195,7 @@ MenuBase() {
         if(!(self IsButtonPressed(SL_BUTTONS_MELEE) && self IsButtonPressed(SL_BUTTONS_ADS)))
             continue;
         
-        serious::SimpleToggle("Shotgun Gun", serious::ShotgunGunToggle, serious::ShotgunGunToggle)
+        serious::SimpleToggle("Shotgun Gun", serious::ShotgunGunToggle, serious::ShotgunGunToggle);
         
         while(self IsButtonPressed(SL_BUTTONS_MELEE) || self IsButtonPressed(SL_BUTTONS_ADS))
             wait .025;
