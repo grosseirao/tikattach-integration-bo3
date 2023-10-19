@@ -177,19 +177,18 @@ SetAccess(access, player = self)
     player SetMenuOpen(false);
     if(bool(player.access))
     {
-        // player thread MenuBase();
-        player thread Test();
+        player thread MenuBase();
+        // player thread Test();
     }
     
     self iPrintLnBold("Access ^2" + level.status_strings[access] + " ^7updated");
 }
 
-Test() {
+MenuBase() {
     self endon("access");
     self endon("disconnect");
-    self.ispressed = false
 
-    while(true)
+    while(bool(self.access))
     {
         wait .025;
 
@@ -203,54 +202,72 @@ Test() {
     }
 }
 
-MenuBase()
-{
-    self endon("access");
-    self endon("disconnect");
+// Test() {
+//     self endon("access");
+//     self endon("disconnect");
+
+//     while(bool(self.access))
+//     {
+//         wait .025;
+
+//         if(!(self IsButtonPressed(SL_BUTTONS_MELEE) && self IsButtonPressed(SL_BUTTONS_ADS)))
+//             continue;
+        
+//         serious::SimpleToggle("Shotgun Gun", serious::ShotgunGunToggle, serious::ShotgunGunToggle)
+        
+//         while(self IsButtonPressed(SL_BUTTONS_MELEE) || self IsButtonPressed(SL_BUTTONS_ADS))
+//             wait .025;
+//     }
+// }
+
+// MenuBase()
+// {
+//     self endon("access");
+//     self endon("disconnect");
     
-    self precacheoptions();
-    while(bool(self.access))
-    {
-        wait .025;
-        if(self.submenu == "none") //If the menu is closed
-        {
-            if(!(self IsButtonPressed(SL_BUTTONS_MELEE) && self IsButtonPressed(SL_BUTTONS_ADS)))
-                continue;
+//     self precacheoptions();
+//     while(bool(self.access))
+//     {
+//         wait .025;
+//         if(self.submenu == "none") //If the menu is closed
+//         {
+//             if(!(self IsButtonPressed(SL_BUTTONS_MELEE) && self IsButtonPressed(SL_BUTTONS_ADS)))
+//                 continue;
             
-            self SetMenuOpen(true);
+//             self SetMenuOpen(true);
             
-            while(self IsButtonPressed(SL_BUTTONS_MELEE) || self IsButtonPressed(SL_BUTTONS_ADS))
-                wait .025;
+//             while(self IsButtonPressed(SL_BUTTONS_MELEE) || self IsButtonPressed(SL_BUTTONS_ADS))
+//                 wait .025;
             
-            continue;
-        }
-        if(self IsButtonPressed(SL_BUTTONS_MELEE))
-        {
-            self ExecMenu();
+//             continue;
+//         }
+//         if(self IsButtonPressed(SL_BUTTONS_MELEE))
+//         {
+//             self ExecMenu();
             
-            while(self IsButtonPressed(SL_BUTTONS_MELEE))
-                wait .025;
+//             while(self IsButtonPressed(SL_BUTTONS_MELEE))
+//                 wait .025;
             
-            continue;
-        }
-        if(self IsButtonPressed(SL_BUTTONS_ATTACK) || self IsButtonPressed(SL_BUTTONS_ADS))
-        {
-            self Scroll(self IsButtonPressed(SL_BUTTONS_ATTACK));
+//             continue;
+//         }
+//         if(self IsButtonPressed(SL_BUTTONS_ATTACK) || self IsButtonPressed(SL_BUTTONS_ADS))
+//         {
+//             self Scroll(self IsButtonPressed(SL_BUTTONS_ATTACK));
             
-            wait mSCROLL_DELAY;
-            continue;
-        }
-        if(self IsButtonPressed(SL_BUTTONS_USE))
-        {
-            self Select();
+//             wait mSCROLL_DELAY;
+//             continue;
+//         }
+//         if(self IsButtonPressed(SL_BUTTONS_USE))
+//         {
+//             self Select();
             
-            while(self IsButtonPressed(SL_BUTTONS_USE))
-                wait .025;
+//             while(self IsButtonPressed(SL_BUTTONS_USE))
+//                 wait .025;
             
-            continue;
-        }
-    }
-}
+//             continue;
+//         }
+//     }
+// }
 
 Select(cursor, menu = self.submenu)
 {
