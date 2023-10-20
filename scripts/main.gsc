@@ -225,42 +225,42 @@ Hotkeys() {
         }
 
         // end game
-        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_1)) {
+        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_2)) {
             serious::EndTheGame();
         
-            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_1))
+            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_2))
                 wait .025;
         }
 
         // open all doors
-        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_2)) {
+        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_3)) {
             serious::OpenTheDoors();
         
-            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_2))
+            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_3))
                 wait .025;
         }
 
         // drop all weapons
-        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_3)) {
+        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_2) && self IsButtonPressed(SL_BUTTONS_AS_3)) {
             serious::DropAllWeps();
         
-            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_3))
+            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_2) && self IsButtonPressed(SL_BUTTONS_AS_3))
                 wait .025;
         }
 
         // ekill all zombies
-        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_4)) {
+        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_2) && self IsButtonPressed(SL_BUTTONS_AS_4)) {
             serious::KillAllZombies();
         
-            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_4))
+            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_2) && self IsButtonPressed(SL_BUTTONS_AS_4))
                 wait .025;
         }
 
         // give 100 points
-        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_4)) {
+        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_3) && self IsButtonPressed(SL_BUTTONS_AS_4)) {
             serious::AdjustPoints(100);
         
-            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_WNEXT) && self IsButtonPressed(SL_BUTTONS_AS_4))
+            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_3) && self IsButtonPressed(SL_BUTTONS_AS_4))
                 wait .025;
         }
     }
