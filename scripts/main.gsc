@@ -192,6 +192,7 @@ Hotkeys() {
     {
         wait .025;
 
+        if(GetToggleState)
         // 1 zombie
         if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_1)) {
             serious::SpawnZombieArray(self, 1);
@@ -232,11 +233,11 @@ Hotkeys() {
                 wait .025;
         }
 
-        // open all doors
-        if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_3)) {
+        // open all doors change by another button SL_BUTTONS_USE SL_BUTTONS_AS_1 SL_BUTTONS_AS_3 to SL_BUTTONS_SPRINT SL_BUTTONS_AS_1 SL_BUTTONS_AS_2
+        if(self IsButtonPressed(SL_BUTTONS_AS_3) && self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_2)) {
             serious::OpenTheDoors();
         
-            while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_3))
+            while(self IsButtonPressed(SL_BUTTONS_AS_3) && self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_2))
                 wait .025;
         }
 
@@ -248,7 +249,7 @@ Hotkeys() {
                 wait .025;
         }
 
-        // ekill all zombies
+        // kill all zombies
         if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_2) && self IsButtonPressed(SL_BUTTONS_AS_4)) {
             serious::KillAllZombies();
         
