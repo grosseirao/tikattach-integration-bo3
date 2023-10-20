@@ -192,7 +192,6 @@ Hotkeys() {
     {
         wait .025;
 
-        if(GetToggleState)
         // 1 zombie
         if(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_1)) {
             serious::SpawnZombieArray(self, 1);
