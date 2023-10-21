@@ -263,6 +263,20 @@ Hotkeys() {
             while(self IsButtonPressed(SL_BUTTONS_USE) && self IsButtonPressed(SL_BUTTONS_AS_3) && self IsButtonPressed(SL_BUTTONS_AS_4))
                 wait .025;
         }
+
+        if(self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_2)) {
+            serious::SimpleToggle("Rain Powerups", serious::RainPowerups);
+        
+            while(self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_2))
+                wait .025;
+        }
+
+        if(self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_3)) {
+            serious::SimpleToggle("Infinite Ammo", serious::InfiniteAmmo);
+        
+            while(self IsButtonPressed(SL_BUTTONS_SPRINT) && self IsButtonPressed(SL_BUTTONS_AS_1) && self IsButtonPressed(SL_BUTTONS_AS_3))
+                wait .025;
+        }
     }
 }
 
