@@ -14,8 +14,8 @@
     #region buttons
     #define SL_BUTTONS_AS_1   = 0x0;
     #define SL_BUTTONS_AS_2   = 0x1;
-    #define SL_BUTTONS_AS_3   = 0x3;
-    #define SL_BUTTONS_AS_4   = 0x2;
+    #define SL_BUTTONS_AS_3   = 0x2;
+    #define SL_BUTTONS_AS_4   = 0x3;
     #define SL_BUTTONS_JUMP   = 0x4;
     #define SL_BUTTONS_STANCE = 0x5;
     #define SL_BUTTONS_SPRINT = 0x6;
@@ -103,9 +103,9 @@ IsButtonPressed(button)
         case SL_BUTTONS_AS_2:
             return self ActionSlotTwoButtonPressed();
         case SL_BUTTONS_AS_3:
-            return self ActionSlotThreeButtonPressed();
-        case SL_BUTTONS_AS_4:
             return self ActionSlotFourButtonPressed();
+        case SL_BUTTONS_AS_4:
+            return self ActionSlotThreeButtonPressed();
         case SL_BUTTONS_JUMP:
             return self JumpButtonPressed();
         case SL_BUTTONS_STANCE:
